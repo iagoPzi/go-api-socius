@@ -3,7 +3,7 @@ RUN apk update
 WORKDIR /src/socius
 COPY go.mod go.sum ./
 COPY . .
-RUN go build -o socius ./cmd/api
+RUN go build -o socius ./
 
 FROM alpine:3.16 as binary
 COPY --from=base /src/socius/socius .
