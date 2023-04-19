@@ -6,6 +6,6 @@ COPY . .
 RUN go build -o socius ./
 
 FROM alpine:3.16 as binary
-COPY --from=base /src/socius/socius .
+COPY --from=base /src/socius .
 EXPOSE 3000
 CMD ["./socius"]
